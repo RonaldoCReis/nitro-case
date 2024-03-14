@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { statusList, statusTitles } from '../utils/statusList';
+import { statusList, statusTitles } from '../constants/statusList';
 import { Task } from '../types/interfaces';
 import { v4 as uuidv4 } from 'uuid';
 import { cn } from '../utils/cn';
@@ -12,6 +12,7 @@ const TaskForm = () => {
   const [tasks, setTasks] = useAtom(tasksAtom);
   const [activeTaskId] = useAtom(activeTaskAtom);
   const [, setShowModal] = useAtom(taskModalAtom);
+
   const activeTask = tasks.find((task) => task.id === activeTaskId);
 
   const {

@@ -1,13 +1,14 @@
 import { Edit2, EllipsisVertical } from 'lucide-react';
 import type { Task } from '../types/interfaces';
 import { cn } from '../utils/cn';
-import { statusTitles } from '../utils/statusList';
+import { statusTitles } from '../constants/statusList';
 import { activeTaskAtom, taskModalAtom } from '../atoms';
 import { useAtom } from 'jotai';
 
 const Task = ({ description, status, title, id }: Task) => {
   const [, setShowModal] = useAtom(taskModalAtom);
   const [, setActiveTask] = useAtom(activeTaskAtom);
+
   const handleEdit = () => {
     setActiveTask(id);
     setShowModal(true);

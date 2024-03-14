@@ -1,4 +1,4 @@
-import { statusTitles } from '../utils/statusList';
+import { statusTitles } from '../constants/statusList';
 
 export interface Task {
   id: string;

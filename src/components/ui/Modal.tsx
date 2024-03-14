@@ -4,6 +4,7 @@ import { taskModalAtom } from '../../atoms';
 
 const Modal = ({ children }: PropsWithChildren) => {
   const [, setShowModal] = useAtom(taskModalAtom);
+
   const handleModal = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       setShowModal(false);

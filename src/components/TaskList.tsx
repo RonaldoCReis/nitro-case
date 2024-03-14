@@ -5,7 +5,7 @@ import Button from './ui/Button';
 import Paper from './ui/Paper';
 import SectionTitle from './ui/SectionTitle';
 import { activeTaskAtom, taskModalAtom, tasksAtom } from '../atoms';
-import { statusTitles } from '../utils/statusList';
+import { statusTitles } from '../constants/statusList';
 
 interface TaskListProps {
   status: TaskType['status'];
@@ -13,9 +13,10 @@ interface TaskListProps {
 
 const TaskList = ({ status }: TaskListProps) => {
   const [tasks] = useAtom(tasksAtom);
-  const filteredTasks = tasks.filter((task) => task.status === status);
   const [, setShowModal] = useAtom(taskModalAtom);
   const [, setActiveTask] = useAtom(activeTaskAtom);
+
+  const filteredTasks = tasks.filter((task) => task.status === status);
 
   const handleNewTask = () => {
     setShowModal(true);
