@@ -47,10 +47,7 @@ const TaskForm = () => {
   };
 
   return (
-    <form
-      className="flex flex-col w-screen max-w-3xl gap-6"
-      onSubmit={onSubmit}
-    >
+    <form className="flex flex-col w-full gap-6" onSubmit={onSubmit}>
       <input type="hidden" {...register('id')} />
       <div>
         <input

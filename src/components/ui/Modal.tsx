@@ -12,9 +12,9 @@ const Modal = ({ children }: PropsWithChildren) => {
   return (
     <div
       onClick={handleModal}
-      className="fixed w-screen h-screen left-0 top-0 bg-black bg-opacity-20 flex justify-center items-center"
+      className="fixed w-full h-full left-0 top-0 px-4 bg-black bg-opacity-20 flex justify-center items-center"
     >
-      <div className="bg-white rounded-lg p-8">{children}</div>
+      <div className="bg-white rounded-lg p-8 w-full max-w-3xl">{children}</div>
     </div>
   );
 };

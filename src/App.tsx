@@ -8,7 +8,7 @@ import { taskModalAtom } from './atoms';
 function App() {
   const [showModal] = useAtom(taskModalAtom);
   return (
-    <main className="justify-center flex gap-12 max-w-4xl mx-auto">
+    <main className="justify-center flex gap-8 xl:gap-12 max-w-lg md:max-w-4xl mx-auto px-4 flex-col md:flex-row">
       {statusList.map((status) => (
         <TaskList key={status} status={status} />
       ))}

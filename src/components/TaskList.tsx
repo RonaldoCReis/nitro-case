@@ -37,6 +37,11 @@ const TaskList = ({ status }: TaskListProps) => {
               <Task {...task} />
             </li>
           ))}
+          {filteredTasks.length === 0 && (
+            <div className="border border-dashed p-8 bg-gray-50 rounded-md text-center">
+              Nenhuma tarefa nessa etapa
+            </div>
+          )}
         </ul>
       </Paper>
     </section>
