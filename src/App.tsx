@@ -1,4 +1,4 @@
-import { useAtom } from 'jotai';
+import { useAtomValue } from 'jotai';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 import Modal from './components/ui/Modal';
@@ -7,7 +7,7 @@ import { taskModalAtom } from './atoms';
 import Header from './components/layout/Header';
 
 function App() {
-  const [showModal] = useAtom(taskModalAtom);
+  const showModal = useAtomValue(taskModalAtom);
   return (
     <>
       <Header />

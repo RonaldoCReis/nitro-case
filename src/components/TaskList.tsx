@@ -1,4 +1,4 @@
-import { useAtom } from 'jotai';
+import { useAtomValue, useSetAtom } from 'jotai';
 import { Task as TaskType } from '../types/interfaces';
 import Task from './Task';
 import Button from './ui/Button';
@@ -12,9 +12,9 @@ interface TaskListProps {
 }
 
 const TaskList = ({ status }: TaskListProps) => {
-  const [tasks] = useAtom(tasksAtom);
-  const [, setShowModal] = useAtom(taskModalAtom);
-  const [, setActiveTask] = useAtom(activeTaskAtom);
+  const tasks = useAtomValue(tasksAtom);
+  const setShowModal = useSetAtom(taskModalAtom);
+  const setActiveTask = useSetAtom(activeTaskAtom);
 
   const filteredTasks = tasks.filter((task) => task.status === status);
 

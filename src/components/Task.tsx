@@ -3,11 +3,11 @@ import type { Task } from '../types/interfaces';
 import { cn } from '../utils/cn';
 import { statusTitles } from '../constants/statusList';
 import { activeTaskAtom, taskModalAtom } from '../atoms';
-import { useAtom } from 'jotai';
+import { useSetAtom } from 'jotai';
 
 const Task = ({ description, status, title, id }: Task) => {
-  const [, setShowModal] = useAtom(taskModalAtom);
-  const [, setActiveTask] = useAtom(activeTaskAtom);
+  const setShowModal = useSetAtom(taskModalAtom);
+  const setActiveTask = useSetAtom(activeTaskAtom);
 
   const handleEdit = () => {
     setActiveTask(id);

@@ -1,9 +1,9 @@
-import { useAtom } from 'jotai';
+import { useSetAtom } from 'jotai';
 import { PropsWithChildren } from 'react';
 import { taskModalAtom } from '../../atoms';
 
 const Modal = ({ children }: PropsWithChildren) => {
-  const [, setShowModal] = useAtom(taskModalAtom);
+  const setShowModal = useSetAtom(taskModalAtom);
 
   const handleModal = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {

@@ -3,15 +3,15 @@ import { statusList, statusTitles } from '../constants/statusList';
 import { Task } from '../types/interfaces';
 import { v4 as uuidv4 } from 'uuid';
 import { cn } from '../utils/cn';
-import { useAtom } from 'jotai';
+import { useAtom, useAtomValue, useSetAtom } from 'jotai';
 import { activeTaskAtom, taskModalAtom, tasksAtom } from '../atoms';
 
 const inputStyles = 'border bg-gray-100 px-4 py-3 block w-full';
 
 const TaskForm = () => {
   const [tasks, setTasks] = useAtom(tasksAtom);
-  const [activeTaskId] = useAtom(activeTaskAtom);
-  const [, setShowModal] = useAtom(taskModalAtom);
+  const activeTaskId = useAtomValue(activeTaskAtom);
+  const setShowModal = useSetAtom(taskModalAtom);
 
   const activeTask = tasks.find((task) => task.id === activeTaskId);
 
